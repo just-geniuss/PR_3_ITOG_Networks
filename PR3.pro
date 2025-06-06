@@ -1,6 +1,6 @@
-QT = core
+QT += core widgets network sql
 
-CONFIG += c++17 cmdline
+CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -8,7 +8,11 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         main.cpp \
-        studentlist.cpp
+        server.cpp \
+        client.cpp \
+        database.cpp \
+        serverwindow.cpp \
+        clientwindow.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -16,4 +20,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    studentlist.h
+    server.h \
+    client.h \
+    database.h \
+    serverwindow.h \
+    clientwindow.h
